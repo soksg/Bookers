@@ -25,11 +25,15 @@
   <!--if文？-->
   <%= form_with model: @book do |f| %>
 
-
+    <div class=field >
+      <div>Title</div>
     <%= f.text_field :title %>
+    </div>
 
-
+    <div class=field >
+      <div>Body</div>
     <%= f.text_area :body %>
+    </div>
 
     <%= f.submit 'Create Book' %>
 
