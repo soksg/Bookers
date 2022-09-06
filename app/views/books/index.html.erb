@@ -21,6 +21,19 @@
   </tbody>
 
   <h2>New book</h2>
+  <!--新規投稿時のエラーメッセージ-->
+    <%= if %>
+      <%= %>
+    <%= elsif %>
+
+    <%= elsif %>
+
+    <%= else %>
+    
+    <% end %>
+  <!--<div id="error_explanation">-->
+  <!--  <h2> #{number} error prohibited this book from being saved: </h2>-->
+  <!--</div>-->
   <%= form_with model :@book, url: books_path(@book.id), method: :post do |f| %>
 
     <label for="book_title">Title</label>
