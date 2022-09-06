@@ -9,14 +9,26 @@ class BooksController < ApplicationController
   # end
 
   def create
-    book=Book.find(params[:id])
-    book.save
-    redirect_to book_path(book.id)
+    @book=Book.find(params[:id])
+    @user = current_user
+    @new_book = Book.new(book_params)
+    @new_book.user_id = current_user.id
+    if @new_book.save
+      flash[:notice] = "Book was successfully created."
+      redirect_to book_path(@new_book)
+    # else
+    #   flash[:alret] = "投稿に失敗しました。"
+    #   @books = Book.all
+    #   render "index"
+    end
+
+
+
   end
 
   def update
     book=Book.find(params[:id])
-    book.update
+    book.update(book_params)
     redirect_to book_path(book.id)
   end
 
@@ -29,9 +41,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book=List.find(params[:id])
+    book=Book.find(params[:id])
     book.destroy
-    redirect_to book_path(book.id)
+    redirect_to '/books'
   end
 
  private
