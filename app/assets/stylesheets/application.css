@@ -61,5 +61,15 @@ p{
   margin-bottom: 10px;
 }
 
+th{
+  padding: 1px 1px 5px;
+}
+
+td{
+  padding: 1px 5px 7px;
+  word-wrap: normal;
+  /*word-break : break-all;*/
+  /*overflow-wrap : break-word;*/
+}
 
 
