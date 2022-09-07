@@ -13,9 +13,8 @@ class BooksController < ApplicationController
     if book.save
       redirect_to book_path(book.id)
       flash[:notice] = "Book was successfully created."
-    # 作成途中
-    # else
-    #   flash[:alert] = ""
+    else
+      render :index
     end
   end
 
