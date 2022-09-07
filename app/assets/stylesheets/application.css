@@ -70,4 +70,8 @@ td{
   word-wrap: normal;
 }
 
-
+#error{
+  margin-bottom: 20px;
+  border: 2px;
+  padding: 7px,7px,0;
+}
